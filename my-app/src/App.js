@@ -23,8 +23,6 @@ class App extends Component {
             <Route exact path="/listing" component={Listing}/>
           </Switch>
         </Router>
-
-
     );
   }
 }
