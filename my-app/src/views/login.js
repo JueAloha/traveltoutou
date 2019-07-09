@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { subcription } from '../components/LoginLogic'
+import { registration } from '../components/UserActions'
 
 class Login extends Component {
     state = {
@@ -19,65 +19,54 @@ class Login extends Component {
         });
     }
 
-    infosVerification(event) {
+    handleSubmit(event) {
         event.preventDefault();
-        if (this.state.lastName.length < 2 || this.state.firstName.length < 2) {
-            this.setState(
-                {
-                    validation: "notValid"
-                }
-            );
-            return null
+        if ((this.state.lastName.length < 2 || this.state.lastName.length > 20) && (this.state.firstName.length < 2 || this.state.firstName.length > 20) && (this.state.password.length > 50 || this.state.password.length < 8)) {
+            this.setState({
+                validation: "allNotValid",
+            });
+        } else if (this.state.lastName.length < 2 || this.state.lastName.length > 20) {
+            this.setState({
+                validation: "lastNameNotValid",
+            });
+        } else if (this.state.firstName.length < 2 || this.state.firstName.length > 20) {
+            this.setState({
+                validation: "firstNameNotValid",
+            });
+        } else if (this.state.password.length > 50 || this.state.password.length < 8) {
+            this.setState({
+                validation: "passwordNotValid",
+            });
         } else {
-            this.setState(
-                {
-                    validation: "isValid"
-                }
-            );
-            subcription(this.state)
+            const { lastName, firstName, mail, password } = this.state;
+            registration(lastName, firstName, mail, password);
         }
     }
 
-    render() {
-        let errLastName;
-        let errFirstName;
-        let errMail;
-        let errPassword;
-        if (this.state.validation === "notValid") {
-            errLastName = <span>"Veuillez entrer votre nom"</span>;
-            errFirstName = <span>"Veuillez entrer votre prénom"</span>;
-            errMail = <span>"Veuillez entrer votre mail"</span>;
-            errPassword = <span>"Veuillez entrer votre mot de passe"</span>;
-        } else {
-            errLastName = null;
-            errFirstName = null;
-            errMail = null;
-            errPassword = null;
-        }
 
+    render() {
         return (
-            <form>
+            <form onSubmit={(e) => this.handleSubmit(e)}>
                 <label>
                     Nom :
-                    <input className={this.state.validation} type="text" placeholder="Votre nom" value={this.state.lastName} onChange={(e)=>this.handleInputChange(e)} name="lastName" />
-                    {errLastName}
+                    <input className={this.state.validation} type="text" placeholder="Votre nom" value={this.state.lastName} onChange={(e)=>this.handleInputChange(e)} name="lastName" required={true}/>
+                    <span> {this.state.validation === "lastNameNotValid" ? "Veuillez entrer votre nom" : "" || this.state.validation === "allNotValid" ? "Veuillez entrer votre nom" : ""} </span>
                 </label>
                 <label>
                     Prénom :
-                    <input className={this.state.validation} type="text" placeholder="Votre prénom" value={this.state.firstName} onChange={(e)=>this.handleInputChange(e)} name="firstName" />
-                    {errFirstName}
+                    <input className={this.state.validation} type="text" placeholder="Votre prénom" value={this.state.firstName} onChange={(e)=>this.handleInputChange(e)} name="firstName" required={true}/>
+                    <span> {this.state.validation === "firstNameNotValid" ? "Veuillez entrer votre prénom" : "" || this.state.validation === "allNotValid" ? "Veuillez entrer votre prenom" : ""} </span>
                 </label>
                 <label>
                     Mail :
-                    <input className={this.state.validation} type="mail" placeholder="Votre mail" value={this.state.mail} onChange={(e)=>this.handleInputChange(e)} name="mail" />
-                    {errMail}
+                    <input className={this.state.validation} type="email" placeholder="Votre mail" value={this.state.mail} onChange={(e)=>this.handleInputChange(e)} name="mail" required={true}/>
                 </label>
                 <label>
                     Mot de passe :
-                    <input className={this.state.validation} type="password" placeholder="Votre mot de passe" value={this.state.password} onChange={(e)=>this.handleInputChange(e)} name="password" />
-                    {errPassword}
+                    <input className={this.state.validation} type="password" placeholder="Votre mot de passe" value={this.state.password} onChange={(e)=>this.handleInputChange(e)} name="password" required={true}/>
+                    <span> {this.state.validation === "passwordNotValid" ? "Veuillez entrer votre mot de passe" : "" || this.state.validation === "allNotValid" ? "Veuillez entrer votre mot de passe" : ""} </span>
                 </label>
-                <input onClick={(e)=> this.infosVerification(e)} type="submit" value="Envoyer" />
+                <input type={"submit"} value={"Valider"}/>
             </form>
         );
     }
