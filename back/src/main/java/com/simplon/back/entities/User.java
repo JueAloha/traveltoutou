@@ -23,6 +23,11 @@ public class User {
     @Embedded
     private UserAccount account;
 
+    public User(String firstname, String lastname) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
     public User() {
 
     }

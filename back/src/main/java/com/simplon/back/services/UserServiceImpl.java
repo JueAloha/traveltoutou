@@ -16,6 +16,8 @@ public class UserServiceImpl implements UserService {
 
     private final UserJpaRepository repo;
 
+
+    @Override
     public void create(UserCreateDto dto) {
         User user = new User();
         user.setFirstname(dto.getFirstname());
@@ -30,6 +32,7 @@ public class UserServiceImpl implements UserService {
         repo.save(user);
     }
 
+    @Override
     public void delete(Long id) {
         repo.deleteById(id);
     }
