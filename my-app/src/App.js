@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
-import Home from './view/home'
-import Login from './view/login'
-import Account from './view/account'
-import Ad from './view/ad'
-import Listing from './view/listing'
+import Home from './views/home'
+import Login from './views/login/login'
+import Account from './views/account'
+import Ad from './views/ad'
+import Listing from './views/listing'
+
+
 
 class App extends Component {
   render() {

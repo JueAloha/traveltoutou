@@ -1,0 +1,28 @@
+.login_main{
+display: flex;
+height: 90vh;
+width: 100%;
+}
+
+.img_login{
+    height: 100%;
+    width: 50%;
+    background: red;
+}
+
+.form_login{
+    background: blue;
+    width: 50%;
+    height: 100%;
+    
+}
+
+.inputs_login{
+    height: 300px;
+    width: 350px;
+    background: black;
+}
+
+.inputs_login input{
+    display: block;
+}

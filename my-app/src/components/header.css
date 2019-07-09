@@ -1,0 +1,8 @@
+*{
+   margin: 0;
+   padding: 0; 
+}
+.header_main{
+    height: 85px;
+    border: 1px solid black;
+}
