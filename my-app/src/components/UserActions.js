@@ -6,7 +6,17 @@
      };
 
      return fetch(`kiwi/api/users/register`, requestOptions).then(handleResponse);
-};
+ };
+
+ export const connexion = (mail, password) => {
+     const requestOptions = {
+         method: 'GET',
+         headers: { 'Content-Type': 'application/json' },
+         body: JSON.stringify({mail, password })
+     };
+
+     return fetch(`kiwi/api/users/login`, requestOptions).then(handleResponse);
+ };
 
 
  function handleResponse(response) {
