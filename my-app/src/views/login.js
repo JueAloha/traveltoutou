@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { connexion } from '../components/UserActions'
+import { connection } from '../components/UserActions'
 
 class Connexion extends Component {
     state = {
@@ -25,7 +25,8 @@ class Connexion extends Component {
             });
         } else {
             const {mail, password } = this.state;
-            connexion(mail, password);
+            const result = connection(mail, password);
+            console.log(result)
         }
     }
 
