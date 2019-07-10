@@ -56,7 +56,7 @@ public class BackApplication {
 			// CSRF disabled to ease tests with Postman
 			http.cors().and().csrf().disable().authorizeRequests()
 					.antMatchers("/login", "/security/authError",
-							"/security/login", "/security/logout", "/users")
+							"/security/login", "/security/logout", "/users/**")
 					// "/mvc/**" for JSP examples
 					.permitAll().and().formLogin().loginPage("/security/login")
 					.loginProcessingUrl("/login")

@@ -16,7 +16,6 @@ class Header extends React.Component {
                        <li><a href="" className="nav" >Se connecter</a></li>
                    </ul>
                </div>
-              
            </div>
         )
     }

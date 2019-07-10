@@ -1,17 +1,11 @@
 package com.simplon.back.controllers;
 
 import com.simplon.back.dtos.UserCreateDto;
+import com.simplon.back.dtos.UserUpdateDto;
 import com.simplon.back.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.annotation.Secured;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -25,13 +19,19 @@ public class UserController {
         this.service = service;
     }
 
-    @PostMapping
+    @PostMapping("/register")
     @ResponseStatus(value = HttpStatus.CREATED)
     protected void create(@Valid @RequestBody UserCreateDto user) {
         service.create(user);
     }
 
+    @PutMapping("/{id}")
+    protected void update(@PathVariable(value = "id") Long id, @Valid @RequestBody UserUpdateDto user) {
+
+    }
+
     @DeleteMapping("{id}")
+    @Secured("ROLE_ADMIN")
     protected void delete(@PathVariable(value = "id") Long id) {
         service.delete(id);
     }

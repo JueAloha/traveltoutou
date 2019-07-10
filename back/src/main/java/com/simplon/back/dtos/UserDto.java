@@ -5,18 +5,33 @@ import lombok.Data;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-@Data
+
 public class UserDto {
 
     @NotBlank
     @Size(min = 2, max = 20)
-    private String firstname;
+    private String firstName;
     @NotBlank
     @Size(min= 2, max = 20)
-    private String lastname;
+    private String lastName;
 
     public UserDto() {
 
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstname) {
+        this.firstName = firstname;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastname) {
+        this.lastName = lastname;
+    }
 }
