@@ -1,17 +1,23 @@
 package com.simplon.back.dtos;
 
-import lombok.Data;
-
 import javax.validation.Valid;
 
-@Data
+
 public class UserCreateDto extends UserDto {
 
     @Valid
-    private UserAccountDto accountDto;
+    private UserAccountDto userAccount;
+
     public UserCreateDto() {
 
     }
 
+    public UserAccountDto getUserAccount() {
+        return userAccount;
+    }
+
+    public void setUserAccountDto(UserAccountDto userAccount) {
+        this.userAccount = userAccount;
+    }
 
 }
