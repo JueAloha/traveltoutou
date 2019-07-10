@@ -9,10 +9,12 @@ class Header extends React.Component {
                    <img src={require("../image/logo.png")} alt="logo" className="logo_img"></img>
                </figure>
                <div className="header_links">
-                <a href="" className="nav"> Consulter les annonces</a>
-                <a href="" className="nav" >Deposer une annonce</a>
-                <a href="" className="nav" >S'inscrire</a>
-                <a href="" className="nav" >Se connecter</a>
+                   <ul>
+                       <li><a href="" className="nav"> Consulter les annonces</a></li>
+                       <li><a href="" className="nav" >Deposer une annonce</a></li>
+                       <li><a href="" className="nav" >S'inscrire</a></li>
+                       <li><a href="" className="nav" >Se connecter</a></li>
+                   </ul>
                </div>
               
            </div>

@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import { registration } from '../../components/UserActions'
-import "./login.css"
+import "./formpage.css"
 import Header from "../../components/Header"
 
-class Login extends Component {
+class Registration extends Component {
     state = {
         lastName: "",
         firstName: "",
@@ -49,12 +49,13 @@ class Login extends Component {
         return (
             <div className="all_main">
                 <Header></Header>
-                <main className="login_main">
-                    <figure className="img_login">
+                <main className="register_main">
+                    <figure className="img_register">
                         <img src={require("../../image/dog.png")}></img>
+                        <figcaption className="big_text_registration"><span className="big_text_color">Rejoins</span>-Nous<br></br><span className="small_text_registration">Ça donne du chien !</span></figcaption>
                     </figure>
-            <form onSubmit={(e) => this.handleSubmit(e)} className="form_login">
-            <div className="inputs_login">
+            <form onSubmit={(e) => this.handleSubmit(e)} className="form_register">
+            <div className="inputs_register">
                 <label>
                     Nom :
                     <input className={this.state.validation} type="text" placeholder="Votre nom" value={this.state.lastName} onChange={(e)=>this.handleInputChange(e)} name="lastName" required={true}/>
@@ -74,7 +75,7 @@ class Login extends Component {
                     <input className={this.state.validation} type="password" placeholder="Votre mot de passe" value={this.state.password} onChange={(e)=>this.handleInputChange(e)} name="password" required={true}/>
                     <span> {this.state.validation === "passwordNotValid" ? "Veuillez entrer votre mot de passe" : "" || this.state.validation === "allNotValid" ? "Veuillez entrer votre mot de passe" : ""} </span>
                 </label>
-                <input type={"submit"} value={"Valider"}/>
+                <input id="submit_registration" type={"submit"} value={"Valider"}/>
                 </div>
             </form>
             </main>
@@ -83,4 +84,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default Registration;
