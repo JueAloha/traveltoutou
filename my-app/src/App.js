@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import './App.css';
 import Home from './views/home'
-import Login from './views/login/login'
+import Login from './views/login/registration'
 import Account from './views/account'
 import Ad from './views/ad'
 import Listing from './views/listing'
