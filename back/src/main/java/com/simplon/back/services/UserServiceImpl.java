@@ -31,6 +31,8 @@ public class UserServiceImpl implements UserService {
         UserAccount account = new UserAccount();
         account.setUsername(dto.getUserAccount().getUsername());
         account.setPassword(dto.getUserAccount().getPassword());
+        user.setUserAccount(account);
+        repo.save(user);
     }
 
     @Override
