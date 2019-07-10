@@ -26,10 +26,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public void create(UserCreateDto dto) {
         Person user = new Person();
-        user.setFirstname(dto.getFirstname());
-        user.setLastname(dto.getLastname());
+        user.setFirstName(dto.getFirstName());
+        user.setLastName(dto.getLastName());
         UserAccount account = new UserAccount();
-        account.setUsername(dto.getUserAccount().getUsername());
+        account.setUsername(dto.getUserAccount().getUserName());
         account.setPassword(dto.getUserAccount().getPassword());
         user.setUserAccount(account);
         repo.save(user);

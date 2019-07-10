@@ -10,28 +10,28 @@ public class UserDto {
 
     @NotBlank
     @Size(min = 2, max = 20)
-    private String firstname;
+    private String firstName;
     @NotBlank
     @Size(min= 2, max = 20)
-    private String lastname;
+    private String lastName;
 
     public UserDto() {
 
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstname) {
+        this.firstName = firstname;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastname) {
+        this.lastName = lastname;
     }
 }

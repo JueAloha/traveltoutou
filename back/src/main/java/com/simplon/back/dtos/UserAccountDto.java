@@ -8,18 +8,18 @@ public class UserAccountDto {
 
     @NotBlank
     @Size(max=100)
-    private String username;
+    private String userName;
     @NotBlank
     // Size fait reference à l'input direct et non au slot de la BD (voir length dans Person)
     @Size(max=100)
     private String password;
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUsername(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
