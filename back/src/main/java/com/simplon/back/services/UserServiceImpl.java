@@ -29,12 +29,8 @@ public class UserServiceImpl implements UserService {
         user.setFirstname(dto.getFirstname());
         user.setLastname(dto.getLastname());
         UserAccount account = new UserAccount();
-        account.setMail(dto.getUserAccount().getMail());
-        String decoded = dto.getUserAccount().getPassword();
-        String encoded = encoder.encode(decoded);
-        account.setPassword(encoded);
-        user.setAccount(account);
-        repo.save(user);
+        account.setUsername(dto.getUserAccount().getUsername());
+        account.setPassword(dto.getUserAccount().getPassword());
     }
 
     @Override

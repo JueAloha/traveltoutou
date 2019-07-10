@@ -23,11 +23,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String mail) throws UsernameNotFoundException { // Pré-implémentation du UserDetails
-        Person person = repo.findByUserAccountMail(mail); // Appelle en BDD
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException { // Pré-implémentation du UserDetails
+        Person person = repo.findByUserAccountUsername(username); // Appelle en BDD
 
         if (person == null) {
-            throw new UsernameNotFoundException("with mail: " + mail);
+            throw new UsernameNotFoundException("with mail: " + username);
         }
 
         UserAccount account = person.getUserAccount();
@@ -39,7 +39,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     // Ce code n'a pas sa place dans une couche service, il serait plus judicieux de l'avoir dans une classe à part
 
     private User buildUser(UserAccount account) {
-        String mail = account.getMail();
+        String mail = account.getUsername();
         String password = account.getPassword();
         boolean enabled = account.isEnabled();
         boolean accountNonExpired = account.isAccountNonExpired();

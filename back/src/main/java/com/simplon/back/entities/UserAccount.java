@@ -1,39 +1,51 @@
 package com.simplon.back.entities;
 
-import javax.persistence.*;
 
-@Embeddable // Intégrable
+import javax.persistence.Column;
+import javax.persistence.Convert;
+import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
+//permet d'emporter la classe.
+@Embeddable
 public class UserAccount {
 
     @Column(length = 100, nullable = false)
-    private String mail;
+    private String username;
+
     @Column(length = 100, nullable = false)
     private String password;
-    @Convert(converter = BooleanConverter.class)
-    @Column(nullable = false, length = 1)
+
+    @Column(nullable = false)
+    @Convert(converter =  BooleanConverter.class)
     private boolean accountNonExpired = true;
-    @Convert(converter = BooleanConverter.class)
-    @Column(nullable = false, length = 1)
+
+    @Column(nullable = false)
+    @Convert(converter =  BooleanConverter.class)
     private boolean accountNonLocked = true;
-    @Convert(converter = BooleanConverter.class)
-    @Column(nullable = false, length = 1)
+
+    @Column(nullable = false)
+    @Convert(converter =  BooleanConverter.class)
     private boolean credentialsNonExpired = true;
-    @Convert(converter = BooleanConverter.class)
-    @Column(nullable = false, length = 1)
+
+    @Column(nullable = false)
+    @Convert(converter =  BooleanConverter.class)
     private boolean enabled = true;
+
     @Column(nullable = false, length = 100)
-    @Enumerated(EnumType.STRING)// Forcage du type en string pour éviter que Spring se base sur l'ordinal
+    @Enumerated(EnumType.STRING)
     private Role role = Role.ROLE_USER;
 
     public UserAccount() {
     }
 
-    public String getMail() {
-        return mail;
+    public String getUsername() {
+        return username;
     }
 
-    public void setMail(String mail) {
-        this.mail = mail;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
