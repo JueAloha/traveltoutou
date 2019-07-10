@@ -10,9 +10,9 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(length = 100, nullable = false)
-    private String firstname;
+    private String firstName;
     @Column(nullable = false)
-    private String lastname;
+    private String lastName;
 
     @Column(nullable = false)
 
@@ -24,26 +24,26 @@ public class Person {
         super();
     }
 
-    public Person(String firstname, String lastname, boolean active) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public Person(String firstName, String lastName, boolean active) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public Long getId() {

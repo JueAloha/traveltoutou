@@ -19,7 +19,7 @@ public class UserController {
         this.service = service;
     }
 
-    @PostMapping
+    @PostMapping("/register")
     @ResponseStatus(value = HttpStatus.CREATED)
     protected void create(@Valid @RequestBody UserCreateDto user) {
         service.create(user);
