@@ -14,7 +14,6 @@ class Header extends React.Component {
                 <a href="" className="nav" >S'inscrire</a>
                 <a href="" className="nav" >Se connecter</a>
                </div>
-              
            </div>
         )
     }
