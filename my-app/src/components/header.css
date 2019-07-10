@@ -2,7 +2,30 @@
    margin: 0;
    padding: 0; 
 }
+
 .header_main{
-    height: 85px;
-    border: 1px solid black;
+    height: 80px;
+    display: flex;
 }
+
+.header_links{
+    height: 100%;
+    width: 800px;
+    padding-top: 25px;
+   
+}
+
+.nav{
+    margin-left: 60px;
+    text-decoration: none;
+    color: #086d6c;
+}
+
+.logo{
+    height: 100px;
+    margin-right: 680px;
+    
+}
+
+.logo_img{
+    height: 80px;

@@ -6,13 +6,14 @@ class Header extends React.Component {
         return (
            <div className="header_main">
                <figure className="logo">
-                   <img src="../../../public/image/dogwalk.png"></img>
+                   <img src={require("../image/logo.png")} alt="logo" className="logo_img"></img>
                </figure>
-               <a className="nav"> Les cartes</a>
-               <a className="nav" >Plans</a>
-               <a className="nav" >Tenues</a>
-               <a className="nav" >Videos</a>
-              
+               <div className="header_links">
+                <a href="" className="nav"> Consulter les annonces</a>
+                <a href="" className="nav" >Deposer une annonce</a>
+                <a href="" className="nav" >S'inscrire</a>
+                <a href="" className="nav" >Se connecter</a>
+               </div>
            </div>
         )
     }
