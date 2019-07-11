@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { registration } from '../../Services/UserActions'
-import Header from "../../components/Header"
+import Header from "../../components/Header/header"
 import "./register.css"
 
 class Register extends Component {

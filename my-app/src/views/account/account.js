@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "./account.css"
-import Header from "../../components/Header"
+import Header from "../../components/Header/header"
 import Profil from "../../components/profil/Profil"
 
 

@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import Header from "../../components/Header"
+import Header from "../../components/Header/header"
 import Ads from "../../components/Ad/ad"
 import "./listing.css"
 
