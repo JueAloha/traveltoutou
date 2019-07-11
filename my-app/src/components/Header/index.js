@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './theme.css';
 
 class Index extends React.Component {
@@ -6,13 +7,12 @@ class Index extends React.Component {
         return (
            <div className="header_main">
                <figure className="logo">
-                   <img src={require("../../image/logo.png")} alt="logo" className="logo_img"></img>
+                   <Link><img src={require("../../image/logo.png")} alt="logo" className="logo_img"/></Link>
                </figure>
                <div className="header_links">
-                <a href="" className="nav"> Consulter les annonces</a>
-                <a href="" className="nav" >Deposer une annonce</a>
-                <a href="" className="nav" >S'inscrire</a>
-                <a href="" className="nav" >Se connecter</a>
+                   <Link to={"/ad"}><a href="" className="nav"> Deposer les annonces</a></Link>
+                <a href="" className="nav" >Consulter une annonce</a>
+                   <Link to={"/login"}><a href="" className="nav" >Se connecter</a></Link>
                </div>
            </div>
         )
