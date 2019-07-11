@@ -3,10 +3,13 @@ package com.simplon.back.services;
 import com.simplon.back.dtos.UserCreateDto;
 import com.simplon.back.entities.Person;
 import com.simplon.back.entities.UserAccount;
+import com.simplon.back.exception.ResourceNotFoundException;
 import com.simplon.back.repositories.PersonJpaRepository;
 import lombok.Data;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Data
 @Service
@@ -38,5 +41,23 @@ public class UserServiceImpl implements UserService {
     @Override
     public void delete(Long id) {
         repo.deleteById(id);
+    }
+
+    @Override
+    public Person update(UserCreateDto user, Long id) {
+        Person userToUpdate = repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("User", "id", user));
+        userToUpdate.setFirstName(user.getFirstName());
+        userToUpdate.setLastName(user.getLastName());
+        UserAccount accountToUpdate = new UserAccount();
+        accountToUpdate.setUsername(user.getUserAccount().getUserName());
+        accountToUpdate.setPassword(user.getUserAccount().getPassword());
+        userToUpdate.setUserAccount(accountToUpdate);
+        Person updatedUser = repo.save(userToUpdate);
+        return updatedUser;
+    }
+
+    @Override
+    public List getAllUsers() {
+        return this.repo.findAll();
     }
 }
