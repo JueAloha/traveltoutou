@@ -14,6 +14,6 @@ export const handleResponse = (response) => {
             return Promise.reject(error)
         }
     } else {
-        return JSON.parse(response)
+        return Promise.resolve(response)
     }
 }
