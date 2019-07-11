@@ -3,30 +3,60 @@
    padding: 0; 
 }
 
+
 .header_main{
     height: 80px;
     display: flex;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 100;
 }
 
 .header_links{
     height: 100%;
     width: 800px;
-    padding-top: 25px;
-   
+    margin-left: 660px;    
+}
+
+.header_links ul{
+    list-style: none;
+    display: flex;
+    height: 100%;
+
+}
+
+.header_links ul li{
+    height: 99%;
+    width: 23%;
+    margin-left: 15px;
 }
 
 .nav{
-    margin-left: 60px;
     text-decoration: none;
     color: #086d6c;
+    height: 100%;
+    width: 100%;
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.header_links ul li:hover{
+    transition: 1s;
+    background: #f7f7f7;
 }
 
 .logo{
     height: 100px;
-    margin-right: 680px;
-    
+    margin-left : 15px;    
 }
 
+<<<<<<< HEAD:my-app/src/components/header.css
+.logo_img{
+    height: 80px;
+}
+
+=======
 .logo_img {
     height: 80px;
 }
+>>>>>>> b058e73518407ce35e29cdf14a294079975bc533:my-app/src/components/Header/theme.css
