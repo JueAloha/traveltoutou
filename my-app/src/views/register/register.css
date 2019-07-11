@@ -1,0 +1,75 @@
+.all_main{
+    font-family: 'Raleway', sans-serif;
+}
+
+.register_main{
+    display: flex;
+    height: 90vh;
+    width: 100%;
+}
+
+.img_register{
+    height: 100%;
+    width: 50%;
+}
+
+.big_text_registration{
+    font-size: 100px;
+    line-height: 20px;
+    margin-left: 85px;
+    font-weight: 100;
+    color: #2eac81;
+}
+
+.big_text_color{
+    color: #086c6d;
+    font-family: 'Fredoka One', cursive;
+}
+
+.small_text_registration{
+    font-size: 15px;
+    margin-left: 475px;
+}
+
+.form_register{
+    width: 50%;
+    height: 100%;
+}
+
+.inputs_register{
+    height: 450px;
+    width: 360px;
+    margin-top: 20%;
+    margin-left: 26%;
+}
+
+.inputs_register label{
+    font-weight: 200;
+}
+
+.inputs_register input{
+    display: block;
+    border: 0 solid transparent;
+    width: 100%;
+    height: 38px;
+    margin-bottom: 25px;
+    border-radius: 2px;
+    box-shadow: inset -1px -4px 19px -7px rgba(230,230,230,1);
+}
+
+#submit_registration{
+    background: #086c6d;
+    box-shadow: -1px 2px 0 -200px rgba(0,0,0,0.75);
+    border-radius: 3px;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+    width: 50%;
+    margin-left: 25%;
+}
+
+#submit_registration:hover{
+    transition: 1s;
+    box-shadow: inset 0 3px 13px 0 rgba(0,0,0,0.75);
+    background: #2eac81;
+}
