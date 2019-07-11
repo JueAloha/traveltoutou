@@ -78,7 +78,6 @@ class Ad extends Component {
                         </div>
                     </form>
                 </main>
-
             </div>
         );
     }

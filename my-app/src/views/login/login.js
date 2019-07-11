@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import "./connexion.css"
-import "../registration/formpage.css"
-import Header from "../../components/Header"
+import "./login.css"
+import "../register/register.css"
+import Header from "../../components/Header/header"
 
 
 class Connexion extends Component {
