@@ -59,12 +59,12 @@ class Register extends Component {
                             <label>
                                 Nom :
                                 <input className={this.state.validation} type="text" placeholder="Votre nom" value={this.state.lastName} onChange={(e)=>this.handleInputChange(e)} name="lastName" required={true}/>
-                                <span> {this.state.validation === "lastNameNotValid" ? "Veuillez entrer votre nom" : "" || this.state.validation === "allNotValid" ? "Veuillez entrer votre nom" : ""} </span>
+                                <span> {this.state.validation === "firstNameNotValid" ? "Veuillez entrer votre nom" : "" || this.state.validation === "allNotValid" ? "Veuillez entrer votre nom" : ""} </span>
                             </label>
                             <label>
                                 Prénom :
                                 <input className={this.state.validation} type="text" placeholder="Votre prénom" value={this.state.firstName} onChange={(e)=>this.handleInputChange(e)} name="firstName" required={true}/>
-                                <span> {this.state.validation === "firstNameNotValid" ? "Veuillez entrer votre prénom" : "" || this.state.validation === "allNotValid" ? "Veuillez entrer votre prenom" : ""} </span>
+                                <span> {this.state.validation === "lastNameNotValid" ? "Veuillez entrer votre prénom" : "" || this.state.validation === "allNotValid" ? "Veuillez entrer votre prenom" : ""} </span>
                             </label>
                             <label>
                                 Mail :
