@@ -3,9 +3,9 @@
 }
 
 .register_main{
-display: flex;
-height: 90vh;
-width: 100%;
+    display: flex;
+    height: 90vh;
+    width: 100%;
 }
 
 .img_register{
@@ -41,7 +41,6 @@ width: 100%;
     width: 360px;
     margin-top: 20%;
     margin-left: 26%;
-    background: blue;
 }
 
 .inputs_register label{
@@ -50,7 +49,7 @@ width: 100%;
 
 .inputs_register input{
     display: block;
-    border: 0px solid transparent;
+    border: 0 solid transparent;
     width: 100%;
     height: 38px;
     margin-bottom: 25px;
@@ -60,7 +59,7 @@ width: 100%;
 
 #submit_registration{
     background: #086c6d;
-    box-shadow: -1px 2px 0px -200px rgba(0,0,0,0.75);
+    box-shadow: -1px 2px 0 -200px rgba(0,0,0,0.75);
     border-radius: 3px;
     color: white;
     font-family: 'Fredoka One', cursive;
@@ -71,6 +70,6 @@ width: 100%;
 
 #submit_registration:hover{
     transition: 1s;
-    box-shadow: inset 0px 3px 13px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0 3px 13px 0 rgba(0,0,0,0.75);
     background: #2eac81;
 }

@@ -50,7 +50,13 @@
     margin-left : 15px;    
 }
 
+<<<<<<< HEAD:my-app/src/components/header.css
 .logo_img{
     height: 80px;
 }
 
+=======
+.logo_img {
+    height: 80px;
+}
+>>>>>>> b058e73518407ce35e29cdf14a294079975bc533:my-app/src/components/Header/theme.css
