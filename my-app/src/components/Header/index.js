@@ -1,12 +1,12 @@
 import React from 'react';
-import header from'./header.css';
+import './theme.css';
 
-class Header extends React.Component {
+class Index extends React.Component {
     render(){
         return (
            <div className="header_main">
                <figure className="logo">
-                   <img src={require("../image/logo.png")} alt="logo" className="logo_img"></img>
+                   <img src={require("../../image/logo.png")} alt="logo" className="logo_img"></img>
                </figure>
                <div className="header_links">
                 <a href="" className="nav"> Consulter les annonces</a>
@@ -18,4 +18,4 @@ class Header extends React.Component {
         )
     }
 }
-export default Header;
+export default Index;

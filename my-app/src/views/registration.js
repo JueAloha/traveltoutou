@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { registration } from '../components/UserActions'
+import { registration } from '../Services/UserActions'
 
 class Registration extends Component {
     state = {

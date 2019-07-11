@@ -1,0 +1,46 @@
+textarea{
+    resize: none;
+    box-shadow: inset -1px -4px 19px -7px rgba(230,230,230,1);
+    border: 0px solid transparent;
+}
+
+.big_text_ad{
+    font-size: 65px;
+    line-height: 50px;
+    margin-left: 150px;
+    font-weight: 100;
+    color: #2eac81;
+
+
+}
+
+.small_text_ad{
+    font-size: 15px;
+    display: block;
+    height: 20px;
+    line-height: 10px;
+}
+
+
+.inputs_ad{
+    height: 100%;
+    width: 360px;
+    margin-left: 26%;
+}
+
+.inputs_ad input,.inputs_ad select{
+    display: block;
+    border: 0px solid transparent;
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+    box-shadow: inset -1px -4px 19px -7px rgba(230,230,230,1);
+}
+
+
+.inputs_ad label{
+    font-weight: 200;
+    font-size: 15px;
+}
+
