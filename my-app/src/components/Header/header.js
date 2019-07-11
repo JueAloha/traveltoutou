@@ -1,19 +1,20 @@
 import React from 'react';
-import header from'./header.css';
+import { Link } from 'react-router-dom'
+import './header.css';
 
 class Header extends React.Component {
     render(){
         return (
            <div className="header_main">
                <figure className="logo">
-                   <img src={require("../../image/logo.png")} alt="logo" className="logo_img"></img>
+                   <img src={require("../../image/logo.png")} alt="logo" className="logo_img"/>
                </figure>
                <div className="header_links">
                    <ul>
-                       <li><a href="" className="nav"> Consulter les annonces</a></li>
-                       <li><a href="" className="nav" >Deposer une annonce</a></li>
-                       <li><a href="" className="nav" >S'inscrire</a></li>
-                       <li><a href="" className="nav" >Se connecter</a></li>
+                       <Link to={"/listing"}><li><a className="nav">Consulter les annonces</a></li></Link>
+                       <Link to={"/ad"}><li><a className="nav">Deposer une annonce</a></li></Link>
+                       <Link to={"/register"}><li><a className="nav">S'inscrire</a></li></Link>
+                       <Link to={"/login"}><li><a className="nav">Se connecter</a></li></Link>
                    </ul>
                </div>
            </div>

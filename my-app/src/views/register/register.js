@@ -41,7 +41,8 @@ class Register extends Component {
             });
         } else {
             const { lastName, firstName, mail, password } = this.state;
-            registration(lastName, firstName, mail, password);
+            let result = registration(lastName, firstName, mail, password);
+            console.log(result)
         }
     }
 
