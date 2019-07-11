@@ -1,8 +1,7 @@
 package com.simplon.back.services;
 
-import com.simplon.back.dtos.UserCreateDto;
 import com.simplon.back.entities.Person;
-import com.simplon.back.entities.UserAccount;
+
 import com.simplon.back.exception.ResourceNotFoundException;
 import com.simplon.back.repositories.PersonJpaRepository;
 import lombok.Data;
@@ -27,14 +26,12 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public void create(UserCreateDto dto) {
+    public void create(Person dto) {
         Person user = new Person();
-        user.setFirstName(dto.getFirstName());
         user.setLastName(dto.getLastName());
-        UserAccount account = new UserAccount();
-        account.setUsername(dto.getUserAccount().getUserName());
-        account.setPassword(dto.getUserAccount().getPassword());
-        user.setUserAccount(account);
+        user.setFirstName(dto.getFirstName());
+        user.setUsername(dto.getUsername());
+        user.setPassword(dto.getPassword());
         repo.save(user);
     }
 
@@ -43,15 +40,13 @@ public class UserServiceImpl implements UserService {
         repo.deleteById(id);
     }
 
-    @Override
-    public Person update(UserCreateDto user, Long id) {
+
+    public Person update(Person user, Long id) {
         Person userToUpdate = repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("User", "id", user));
-        userToUpdate.setFirstName(user.getFirstName());
         userToUpdate.setLastName(user.getLastName());
-        UserAccount accountToUpdate = new UserAccount();
-        accountToUpdate.setUsername(user.getUserAccount().getUserName());
-        accountToUpdate.setPassword(user.getUserAccount().getPassword());
-        userToUpdate.setUserAccount(accountToUpdate);
+        userToUpdate.setFirstName(user.getFirstName());
+        userToUpdate.setUsername(user.getUsername());
+        userToUpdate.setPassword(user.getPassword());
         Person updatedUser = repo.save(userToUpdate);
         return updatedUser;
     }
@@ -60,4 +55,9 @@ public class UserServiceImpl implements UserService {
     public List getAllUsers() {
         return this.repo.findAll();
     }
+    @Override
+    public void deleteAll() {
+        repo.deleteAll();
+    }
+
 }
