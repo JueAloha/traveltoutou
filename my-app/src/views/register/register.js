@@ -7,7 +7,7 @@ class Register extends Component {
     state = {
         lastName: "",
         firstName: "",
-        mail: "",
+        username: "",
         password: "",
         validation: "isValid",
     };
@@ -40,8 +40,8 @@ class Register extends Component {
                 validation: "passwordNotValid",
             });
         } else {
-            const { lastName, firstName, mail, password } = this.state;
-            let result = registration(lastName, firstName, mail, password);
+            const { lastName, firstName, username, password } = this.state;
+            let result = registration(lastName, firstName, username, password);
             console.log(result)
         }
     }
@@ -69,7 +69,7 @@ class Register extends Component {
                             </label>
                             <label>
                                 Mail :
-                                <input className={this.state.validation} type="email" placeholder="Votre mail" value={this.state.mail} onChange={(e)=>this.handleInputChange(e)} name="mail" required={true}/>
+                                <input className={this.state.validation} type="email" placeholder="Votre mail" value={this.state.username} onChange={(e)=>this.handleInputChange(e)} name="username" required={true}/>
                             </label>
                             <label>
                                 Mot de passe :
