@@ -21,6 +21,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
+
     public void create(Person user) {
         Person userCreated = new Person();
         userCreated.setLastName(user.getLastName());
@@ -54,4 +55,5 @@ public class UserServiceImpl implements UserService {
     public void deleteAll() {
         repo.deleteAll();
     }
+
 }

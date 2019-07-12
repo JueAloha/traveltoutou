@@ -20,6 +20,7 @@ public class UserController {
     @PostMapping("/register")
     @ResponseStatus(value = HttpStatus.CREATED)
     protected void create(@Valid @RequestBody Person user) {
+
         service.create(user);
     }
 
@@ -30,6 +31,7 @@ public class UserController {
 
     @PutMapping("/{id}")
     protected void update(@PathVariable(value = "id") Long id, @Valid @RequestBody Person user) {
+
         service.update(user, id);
     }
 

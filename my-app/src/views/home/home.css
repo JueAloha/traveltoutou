@@ -1,0 +1,67 @@
+.home_main{
+    font-family: 'Raleway', sans-serif;
+    height:88vh;
+    display: flex;
+}
+
+.gauche_home{
+    height: 100%;
+    width: 50%;
+}
+
+.img_home{
+    width: 100%;
+}
+
+.droite_home{
+    height: 100%;
+    width: 50%;
+}
+
+.titre_description_home{
+    text-align: center;
+    font-family: 'Fredoka One', cursive;
+}
+
+.titre_description_home span{
+    color: #086c6d;
+}
+
+.logo_home{
+    height: 100px;
+    width: 150px;
+    margin-left: 32%;
+}
+
+.article_home{
+    margin: auto;
+    height: 75%;
+    width: 65%;
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 25px;
+}
+
+
+.btn_home{
+    background: #086c6d;
+    box-shadow: -1px 2px 0 -200px rgba(0,0,0,0.75);
+    border-radius: 3px;
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 10px;
+    border: 0px solid transparent;
+}
+
+.btn_home:hover{
+    transition: 1s;
+    background: #2eac81;
+}
+
+
+
+
