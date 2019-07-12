@@ -1,5 +1,6 @@
 package com.simplon.back.controllers;
 
+
 import com.simplon.back.entities.Person;
 import com.simplon.back.services.UserService;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,7 @@ public class UserController {
     }
     @PutMapping("/{id}")
     protected void update(@PathVariable(value = "id") Long id, @Valid @RequestBody Person user) {
+
         service.update(user, id);
     }
 

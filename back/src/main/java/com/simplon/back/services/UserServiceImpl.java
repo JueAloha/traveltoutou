@@ -1,6 +1,7 @@
 package com.simplon.back.services;
 
 import com.simplon.back.entities.Person;
+
 import com.simplon.back.exception.ResourceNotFoundException;
 import com.simplon.back.repositories.PersonJpaRepository;
 import lombok.Data;
@@ -39,6 +40,7 @@ public class UserServiceImpl implements UserService {
         repo.deleteById(id);
     }
 
+
     public Person update(Person user, Long id) {
         Person userToUpdate = repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("User", "id", user));
         userToUpdate.setLastName(user.getLastName());
@@ -53,9 +55,9 @@ public class UserServiceImpl implements UserService {
     public List getAllUsers() {
         return this.repo.findAll();
     }
-
     @Override
     public void deleteAll() {
         repo.deleteAll();
     }
+
 }

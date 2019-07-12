@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { Component } from 'react'
 import { connection } from '../../Services/UserActions'
 import Header from '../../components/Header/header'
