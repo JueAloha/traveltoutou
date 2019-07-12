@@ -6,7 +6,7 @@ import './login.css'
 
 class Login extends Component {
     state = {
-        mail: "",
+        username: "",
         password: "",
         validation: "isValid",
     };
@@ -27,9 +27,11 @@ class Login extends Component {
                 validation: "passwordNotValid",
             });
         } else {
-            const {mail, password } = this.state;
-            const result = connection(mail, password);
-            console.log(result)
+            const {username, password } = this.state;
+            connection(username, password)
+                .then(result => {
+                return result
+            })
         }
     }
 
@@ -40,23 +42,23 @@ class Login extends Component {
                 <Header/>
                 <main className="register_main">
                     <figure className="img_register">
-                        <img src={require("../../image/cat.jpg")}/>
+                        <img src={require("../../image/cat.jpg")} alt={"A cat"}/>
                         <figcaption className="big_text_registration"><span className="big_text_color">travel</span>Toutou<br/><span className="small_text_connexion"> Moins de blabla plus de Miaou!</span></figcaption>
                     </figure>
-            <form className="form_register" onSubmit={(e) => this.handleSubmit(e)}>
-                <div className="inputs_register">
-                <label>
-                    Mail :
-                    <input className={this.state.validation} type="email" placeholder="Votre mail" value={this.state.mail} onChange={(e)=>this.handleInputChange(e)} name="mail" required={true}/>
-                </label>
-                <label>
-                    Mot de passe :
-                    <input className={this.state.validation} type="password" placeholder="Votre mot de passe" value={this.state.password} onChange={(e)=>this.handleInputChange(e)} name="password" required={true}/>
-                    <span> {this.state.validation === "passwordNotValid" ? "Veuillez entrer votre mot de passe" : "" || this.state.validation === "allNotValid" ? "Veuillez entrer votre mot de passe" : ""} </span>
-                </label>
-                <input type={"submit"} value={"Valider"}/>
-                </div>
-            </form>
+                <form className="form_register" onSubmit={(e) => this.handleSubmit(e)}>
+                    <div className="inputs_register">
+                    <label>
+                        Mail :
+                        <input className={this.state.validation} type="email" placeholder="Votre mail" value={this.state.username} onChange={(e)=>this.handleInputChange(e)} name="username" required={true}/>
+                    </label>
+                    <label>
+                        Mot de passe :
+                        <input className={this.state.validation} type="password" placeholder="Votre mot de passe" value={this.state.password} onChange={(e)=>this.handleInputChange(e)} name="password" required={true}/>
+                        <span> {this.state.validation === "passwordNotValid" ? "Veuillez entrer votre mot de passe" : "" || this.state.validation === "allNotValid" ? "Veuillez entrer votre mot de passe" : ""} </span>
+                    </label>
+                    <input type={"submit"} value={"Valider"}/>
+                    </div>
+                </form>
                 </main>
             </div>
         );

@@ -28,10 +28,10 @@ class Ad extends Component {
 
                 <section className="prix_trajet"><p className="prix"> 10 €</p></section>
                 <div className="user_trajet_annonce">
-                    <img src={require("../../image/user.png")} className="img_annonce" id="user_img_annonce"/>
+                    <img src={require("../../image/user.png")} className="img_annonce" id="user_img_annonce" alt={"A user"}/>
                     <p id="username_annonce">Sarah</p>
-                    <img src={require("../../image/dogicon.png")} className="img_annonce"/>
-                    <img src={require("../../image/cat.png")} className="img_annonce"/>
+                    <img src={require("../../image/dogicon.png")} className="img_annonce" alt={"A dog"}/>
+                    <img src={require("../../image/cat.png")} className="img_annonce" alt={"A cat"}/>
                     <p>x3</p>
                 </div>
 

@@ -8,18 +8,17 @@ export const registration = (lastName, firstName, username, password) => {
          body: JSON.stringify({ lastName, firstName, username, password })
      };
 
-     return fetch(`kiwi/api/users/register`, requestOptions).then(handleResponse)
+     return fetch(`http://192.168.1.86:8080/kiwi/api/users/register`, requestOptions).then(handleResponse)
  };
 
-export const connection = (mail, password) => {
+export const connection = (username, password) => {
   const requestOptions = {
     method: 'GET',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ mail, password }),
   }
 
 
-     return fetch(`kiwi/api/users/login`, requestOptions)
+     return fetch(`http://192.168.1.86:8080/kiwi/api/users/login?username=${username}&password=${password}`, requestOptions)
          .then(handleResponse)
          .then(result => {
              return result

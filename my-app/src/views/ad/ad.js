@@ -10,7 +10,7 @@ class Ad extends Component {
                 <Header/>
                 <main className="register_main">
                     <figure className="img_register">
-                        <img src={require("../../image/cardog.png")}/>
+                        <img src={require("../../image/cardog.png")} alt={"A dog in a car with his hooman"}/>
                         <figcaption className="big_text_ad"><span className="big_text_color">Transportes un </span>Compagnon<br/><span className="small_text_ad">Ça donne du chien !</span></figcaption>
                     </figure>
                     <form className="form_register">
