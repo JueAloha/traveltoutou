@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { registration } from '../../Services/UserActions'
+import { registration } from '../../Services/UserServices'
 import Header from "../../components/Header/header"
 import "./register.css"
 
@@ -41,8 +41,10 @@ class Register extends Component {
             });
         } else {
             const { lastName, firstName, username, password } = this.state;
-            let result = registration(lastName, firstName, username, password);
-            console.log(result)
+            registration(lastName, firstName, username, password)
+            .then(result => {
+                console.log(result)
+            })
         }
     }
 
