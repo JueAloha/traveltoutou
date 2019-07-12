@@ -4,13 +4,14 @@ import Header from "../../components/Header/header"
 import "./register.css"
 
 class Register extends Component {
-    state = {
-        lastName: "",
-        firstName: "",
-        username: "",
-        password: "",
-        validation: "isValid",
-    };
+
+  state = {
+    lastName: '',
+    firstName: '',
+    username: '',
+    password: '',
+    validation: 'isValid',
+  };
 
     handleInputChange(event) {
         const target = event.target;
@@ -18,7 +19,7 @@ class Register extends Component {
         const name = target.name;
         this.setState({
             [name]: value,
-        });
+        })
     }
 
     handleSubmit(event) {
@@ -83,8 +84,8 @@ class Register extends Component {
                     </form>
                 </main>
             </div>
-        );
-    }
+    )
+  }
 }
 
-export default Register;
+export default Register

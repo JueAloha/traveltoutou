@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import "./profil.css"
+import "./profil.css";
+import Ads from "../../components/Ad/ad";
 
 class Profil extends React.Component {
 
@@ -60,8 +61,8 @@ class Profil extends React.Component {
                       <div className="informations_profil">
                         <img src={require("../../image/logo.png")} className="img_info_user"></img>
                         <h1 className="title_info">Vos informations</h1><br></br>
-                        <p>Nom : zouliDeCuba@gmail.com</p>
-                        <p>Prenom : zouliDeCuba@gmail.com</p>
+                        <p>Nom : LeVinet</p>
+                        <p>Prenom : Julie</p>
                         <p>Adresse Mail : zouliDeCuba@gmail.com</p>
                       </div>
                       
@@ -70,8 +71,17 @@ class Profil extends React.Component {
 
 
 
-                      {past ? 'les trajet passés': ''}
-                      {future ? 'les trajets futures': ''}
+                      {past ? 
+                        <div>
+                            <Ads/>
+                            <Ads/>
+                        </div>
+                      : ''}
+                      {future ? 
+                        <div>
+                            <Ads/>
+                            <Ads/>
+                        </div>: ''}
                       
                     </section>                   
                 </div>)
