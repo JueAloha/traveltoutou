@@ -53,6 +53,7 @@ class Profil extends Component {
                         <a href={"#blabla"} className="link_nav_profil" onClick={() => this.switchInformations()}>Mes informations</a>
                         <a href={"#blabla"} className="link_nav_profil" onClick={() => this.switchPast()}>Mes trajets passés</a>
                         <a href={"#blabla"} className="link_nav_profil" onClick={() => this.switchFuture()}>Mes trajets à venir</a>
+                        <a href={"#blabla"} className="link_nav_profil" onClick={() => this.switchFuture()}>Se deconnecter</a>
                     </section>
                     <section className="zone_profil">
                       
