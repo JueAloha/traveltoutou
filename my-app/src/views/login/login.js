@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import { connection } from '../../Services/UserServices'
 import Header from '../../components/Header/header'
-import '../register/register.css'
+import './login.css'
 
 
 class Login extends Component {
