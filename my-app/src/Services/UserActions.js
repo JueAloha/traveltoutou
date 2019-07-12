@@ -7,7 +7,11 @@ export const registration = (lastName, firstName, username, password) => {
          body: JSON.stringify({ lastName, firstName, username, password })
      };
 
-     return fetch(`kiwi/api/users/register`, requestOptions).then(handleResponse);
+     return fetch(`kiwi/api/users/register`, requestOptions)
+         .then(handleResponse)
+         .then(result => {
+             return result
+    })
  };
 
  export const connection = (mail, password) => {
@@ -17,5 +21,9 @@ export const registration = (lastName, firstName, username, password) => {
          body: JSON.stringify({mail, password })
      };
 
-     return fetch(`kiwi/api/users/login`, requestOptions).then(handleResponse);
+     return fetch(`kiwi/api/users/login`, requestOptions)
+         .then(handleResponse)
+         .then(result => {
+             return result
+     })
  };
