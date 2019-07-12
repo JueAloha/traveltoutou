@@ -1,11 +1,9 @@
 package com.simplon.back.services;
 
 import com.simplon.back.entities.Person;
-
 import com.simplon.back.exception.ResourceNotFoundException;
 import com.simplon.back.repositories.PersonJpaRepository;
 import lombok.Data;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,32 +12,29 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private final PasswordEncoder encoder;
-
     private final PersonJpaRepository repo;
 
-    public UserServiceImpl(PasswordEncoder encoder, PersonJpaRepository repo) {
-        this.encoder = encoder;
+    public UserServiceImpl(PersonJpaRepository repo) {
         this.repo = repo;
 
     }
 
 
     @Override
-    public void create(Person dto) {
-        Person user = new Person();
-        user.setLastName(dto.getLastName());
-        user.setFirstName(dto.getFirstName());
-        user.setUsername(dto.getUsername());
-        user.setPassword(dto.getPassword());
-        repo.save(user);
+
+    public void create(Person user) {
+        Person userCreated = new Person();
+        userCreated.setLastName(user.getLastName());
+        userCreated.setFirstName(user.getFirstName());
+        userCreated.setUsername(user.getUsername());
+        userCreated.setPassword(user.getPassword());
+        repo.save(userCreated);
     }
 
     @Override
     public void delete(Long id) {
         repo.deleteById(id);
     }
-
 
     public Person update(Person user, Long id) {
         Person userToUpdate = repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("User", "id", user));
@@ -55,6 +50,7 @@ public class UserServiceImpl implements UserService {
     public List getAllUsers() {
         return this.repo.findAll();
     }
+
     @Override
     public void deleteAll() {
         repo.deleteAll();

@@ -1,6 +1,5 @@
 package com.simplon.back.controllers;
 
-
 import com.simplon.back.entities.Person;
 import com.simplon.back.services.UserService;
 import org.springframework.http.HttpStatus;
@@ -21,7 +20,7 @@ public class UserController {
     @PostMapping("/register")
     @ResponseStatus(value = HttpStatus.CREATED)
     protected void create(@Valid @RequestBody Person user) {
-        System.out.println(user);
+
         service.create(user);
     }
 
@@ -29,6 +28,7 @@ public class UserController {
     protected void getAll() {
     service.getAllUsers();
     }
+
     @PutMapping("/{id}")
     protected void update(@PathVariable(value = "id") Long id, @Valid @RequestBody Person user) {
 

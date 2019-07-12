@@ -53,6 +53,24 @@ Front-end : JavaScript
 
 
 
+<u>**Environnement JAVA :**</u> 
+
+**Installation :** 
+
+
+
+JDK (Java Development Kit) : 
+
+[https://openjdk.java.net/install/](https://openjdk.java.net/install/)
+
+
+
+Après avoir installé le JDK ! 
+
+Installation de Maven : 
+
+[https://docs.wso2.com/display/IS323/Installing+Apache+Maven+on+Windows](https://docs.wso2.com/display/IS323/Installing+Apache+Maven+on+Windows)
+
 
 
 
