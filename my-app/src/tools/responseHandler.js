@@ -10,9 +10,8 @@ export const handleResponse = response => {
     } else if (response.status === 404) {
       const error = 'Votre mail est incorrect'
       return Promise.reject(error)
-    } else {
-      const error =
-        'Oups! Nous avons rencontrez un problème, merci de réessayer'
+    } else if (response.status === 500) {
+      const error = 'Oups! Nous avons rencontrez un problème, merci de réessayer'
       return Promise.reject(error)
     }
   } else {

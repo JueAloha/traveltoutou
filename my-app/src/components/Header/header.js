@@ -11,10 +11,10 @@ class Header extends React.Component {
                </figure>
                <div className="header_links">
                    <ul>
-                       <Link to={"/listing"}><li><a className="nav">Consulter les annonces</a></li></Link>
-                       <Link to={"/ad"}><li><a className="nav">Deposer une annonce</a></li></Link>
-                       <Link to={"/register"}><li><a className="nav">S'inscrire</a></li></Link>
-                       <Link to={"/login"}><li><a className="nav">Se connecter</a></li></Link>
+                   <Link className="nav" to={"/listing"}><li>Consulter les annonces</li></Link>
+                   <Link className="nav" to={"/ad"}><li>Deposer une annonce</li></Link>
+                   <Link className="nav" to={"/register"}><li>S'inscrire</li></Link>
+                   <Link className="nav" to={"/login"}><li>Se connecter</li></Link>
                    </ul>
                </div>
            </div>

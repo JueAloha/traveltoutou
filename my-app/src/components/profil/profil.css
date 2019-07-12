@@ -1,5 +1,5 @@
 .profil_main{
-    height: 470px;
+    height: auto;
     width: 70%;
     margin: auto;
     margin-top: 40px;
@@ -43,7 +43,7 @@
 
 .link_nav_profil{
     display: block;
-    height: 10%;
+    height: 70px;
     width: 100%;
     box-shadow: -3px 10px 4px -10px rgba(0,0,0,0.75);
     margin-top: 1px;

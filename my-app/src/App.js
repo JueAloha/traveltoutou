@@ -5,6 +5,7 @@ import Account from './views/account/account'
 import Ad from './views/ad/ad'
 import Listing from './views/listing/listing'
 import Login from './views/login/login'
+import Home from './views/home/home'
 import './App.css';
 
 
@@ -19,6 +20,8 @@ class App extends Component {
             <Route exact path="/account" component={Account}/>
             <Route exact path="/ad" component={Ad}/>
             <Route exact path="/listing" component={Listing}/>
+            <Route exact path="/home" component={Home}/>
+
           </Switch>
         </Router>
     );
