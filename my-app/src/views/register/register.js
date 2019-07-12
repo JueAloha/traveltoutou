@@ -1,51 +1,64 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
 import { registration } from '../../Services/UserActions'
-import Header from "../../components/Header/header"
-import "./register.css"
+import Header from '../../components/Header/header'
+import './register.css'
 
-class Register extends Component {
-    state = {
-        lastName: "",
-        firstName: "",
-        username: "",
-        password: "",
-        validation: "isValid",
-    };
+class Register extends Component 
 
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.value;
-        const name = target.name;
-        this.setState({
-            [name]: value,
-        });
+  state = {
+    lastName: '',
+    firstName: '',
+    username: '',
+    password: '',
+    validation: 'isValid',
+  }
+
+  handleInputChange(event) {
+    const target = event.target
+    const value = target.value
+    const name = target.name
+    this.setState({
+      [name]: value,
+    })
+  }
+
+  handleSubmit(event) {
+    event.preventDefault()
+    if (
+      (this.state.lastName.length < 2 || this.state.lastName.length > 20) &&
+      (this.state.firstName.length < 2 || this.state.firstName.length > 20) &&
+      (this.state.password.length > 50 || this.state.password.length < 8)
+    ) {
+      this.setState({
+        validation: 'allNotValid',
+      })
+    } else if (
+      this.state.lastName.length < 2 ||
+      this.state.lastName.length > 20
+    ) {
+      this.setState({
+        validation: 'lastNameNotValid',
+      })
+    } else if (
+      this.state.firstName.length < 2 ||
+      this.state.firstName.length > 20
+    ) {
+      this.setState({
+        validation: 'firstNameNotValid',
+      })
+    } else if (
+      this.state.password.length > 50 ||
+      this.state.password.length < 8
+    ) {
+      this.setState({
+        validation: 'passwordNotValid',
+      })
+    } else {
+      const { lastName, firstName, username, password } = this.state
+      let result = registration(lastName, firstName, username, password)
+      console.log(result)
     }
-
-    handleSubmit(event) {
-        event.preventDefault();
-        if ((this.state.lastName.length < 2 || this.state.lastName.length > 20) && (this.state.firstName.length < 2 || this.state.firstName.length > 20) && (this.state.password.length > 50 || this.state.password.length < 8)) {
-            this.setState({
-                validation: "allNotValid",
-            });
-        } else if (this.state.lastName.length < 2 || this.state.lastName.length > 20) {
-            this.setState({
-                validation: "lastNameNotValid",
-            });
-        } else if (this.state.firstName.length < 2 || this.state.firstName.length > 20) {
-            this.setState({
-                validation: "firstNameNotValid",
-            });
-        } else if (this.state.password.length > 50 || this.state.password.length < 8) {
-            this.setState({
-                validation: "passwordNotValid",
-            });
-        } else {
-            const { lastName, firstName, username, password } = this.state;
-            let result = registration(lastName, firstName, username, password);
-            console.log(result)
-        }
-    }
-
+  }
     render() {
         return (
             <div className="all_main">
@@ -81,8 +94,11 @@ class Register extends Component {
                     </form>
                 </main>
             </div>
-        );
-    }
+          </form>
+        </main>
+      </div>
+    )
+  }
 }
 
-export default Register;
+export default Register
