@@ -4,14 +4,18 @@ import Header from "../../components/Header/header"
 import "./register.css"
 
 class Register extends Component {
+    constructor(props) {
+        super(props);
 
-  state = {
-    lastName: '',
-    firstName: '',
-    username: '',
-    password: '',
-    validation: 'isValid',
-  };
+        this.state = {
+            lastName: '',
+            firstName: '',
+            username: '',
+            password: '',
+            validation: 'isValid',
+            isLogged: false,
+        };
+    }
 
     handleInputChange(event) {
         const target = event.target;
@@ -44,7 +48,10 @@ class Register extends Component {
             const { lastName, firstName, username, password } = this.state;
             registration(lastName, firstName, username, password)
             .then(result => {
-                console.log(result)
+                this.setState({
+                    isLogged: !this.state.isLogged
+                });
+                return result
             })
         }
     }
@@ -52,7 +59,7 @@ class Register extends Component {
     render() {
         return (
             <div className="all_main">
-                <Header/>
+                <Header isLogged={this.state.isLogged}/>
                 <main className="register_main">
                     <figure className="img_register">
                         <img src={require("../../image/dog.png")} alt="chien"/>
