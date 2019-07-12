@@ -1,0 +1,108 @@
+.annonce_main{
+    height: 245px;
+    width: 45%;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0px 1px 11px -4px rgba(0,0,0,0.75);
+    display: flex;
+    flex-wrap: wrap;
+    font-family: 'Raleway', sans-serif;
+    margin-top: 20px;
+}
+
+.info_trajet_annonce{
+    height: 60%;
+    /*background: pink;*/
+    width: 50%;
+}
+
+.heure_trajet_annonce{
+    height: 100%;
+    width: 100%;
+    /*border: 1px solid black;*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.date_trajet{
+    height: 20%;
+    width: 100%;
+    /*border: 1px solid black;*/
+    font-weight: 200;
+    margin-bottom: 15px;
+    font-size: 18px;
+    margin-left: 8px;
+    margin-top: 8px;
+
+}
+
+.heure_trajet{
+    height: 65%;
+    width: 25%;
+    /*background: blue;*/
+    font-family: 'Fredoka One', cursive;
+    border-right: 3px solid black;
+    margin-left: 15px;
+    color: #086c6d;
+}
+
+.villes_trajet{
+    height: 80%;
+    width: 35%;
+    padding-left: 5px;
+    /*background: purple; */
+}
+
+
+
+.user_trajet_annonce{
+    height: 40%;
+    width: 100%;
+    /*border: 1px solid black;*/
+    display: flex;
+}
+
+.user_trajet_annonce p{
+    margin-top: 40px;
+    font-size: 19px;
+    font-family: 'Fredoka One', cursive;
+    margin-right: 8px;
+    color: #086c6d;
+}
+
+#username_annonce{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    margin-right: 80px;
+}
+
+.img_annonce{
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+    margin-top: 30px;
+    border-radius: 100px;
+    overflow: hidden;
+}
+
+#user_img_annonce{
+    height: 50px;
+    width: 50px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.prix_trajet{
+    height: 60%;
+    /*background: purple;*/
+    width: 50%;
+    text-align: right;
+
+}
+
+.prix{
+    margin-top: 25px;
+    margin-right: 20px;
+    font-family: 'Fredoka One', cursive;
+    color: #086c6d
+}
