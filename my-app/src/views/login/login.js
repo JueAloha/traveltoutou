@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { connection } from '../../Services/UserActions'
+import { connection } from '../../Services/UserServices'
 import Header from '../../components/Header/header'
 import '../register/register.css'
 
