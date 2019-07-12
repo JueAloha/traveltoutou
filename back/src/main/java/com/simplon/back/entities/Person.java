@@ -10,25 +10,26 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(length = 100, nullable = false)
+    private String lastName;
+    @Column(nullable = false)
     private String firstName;
     @Column(nullable = false)
-    private String lastName;
-
+    private String username;
     @Column(nullable = false)
-
+    private String password;
     //Association de person avec compte
-    @Embedded // Intégré
-    private UserAccount userAccount;
+
 
     public Person() {
         super();
     }
 
-    public Person(String firstName, String lastName, boolean active) {
-        this.firstName = firstName;
+    public Person(String lastName, String firstName, String username, String password) {
         this.lastName = lastName;
+        this.firstName = firstName;
+        this.username = username;
+        this.password = password;
     }
-
 
     public String getFirstName() {
         return firstName;
@@ -54,15 +55,19 @@ public class Person {
         this.id = id;
     }
 
-    public UserAccount getUserAccount() {
-        return userAccount;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserAccount(UserAccount userAccount) {
-        this.userAccount = userAccount;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public void setAccount(UserAccount userAccount) {
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

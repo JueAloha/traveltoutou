@@ -1,12 +1,9 @@
 package com.simplon.back.services;
 
-import com.simplon.back.dtos.UserCreateDto;
 import com.simplon.back.entities.Person;
-import com.simplon.back.entities.UserAccount;
 import com.simplon.back.exception.ResourceNotFoundException;
 import com.simplon.back.repositories.PersonJpaRepository;
 import lombok.Data;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,27 +12,22 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {
 
-    private final PasswordEncoder encoder;
-
     private final PersonJpaRepository repo;
 
-    public UserServiceImpl(PasswordEncoder encoder, PersonJpaRepository repo) {
-        this.encoder = encoder;
+    public UserServiceImpl(PersonJpaRepository repo) {
         this.repo = repo;
 
     }
 
 
     @Override
-    public void create(UserCreateDto dto) {
-        Person user = new Person();
-        user.setFirstName(dto.getFirstName());
-        user.setLastName(dto.getLastName());
-        UserAccount account = new UserAccount();
-        account.setUsername(dto.getUserAccount().getUserName());
-        account.setPassword(dto.getUserAccount().getPassword());
-        user.setUserAccount(account);
-        repo.save(user);
+    public void create(Person user) {
+        Person userCreated = new Person();
+        userCreated.setLastName(user.getLastName());
+        userCreated.setFirstName(user.getFirstName());
+        userCreated.setUsername(user.getUsername());
+        userCreated.setPassword(user.getPassword());
+        repo.save(userCreated);
     }
 
     @Override
@@ -43,15 +35,12 @@ public class UserServiceImpl implements UserService {
         repo.deleteById(id);
     }
 
-    @Override
-    public Person update(UserCreateDto user, Long id) {
+    public Person update(Person user, Long id) {
         Person userToUpdate = repo.findById(id).orElseThrow(() -> new ResourceNotFoundException("User", "id", user));
-        userToUpdate.setFirstName(user.getFirstName());
         userToUpdate.setLastName(user.getLastName());
-        UserAccount accountToUpdate = new UserAccount();
-        accountToUpdate.setUsername(user.getUserAccount().getUserName());
-        accountToUpdate.setPassword(user.getUserAccount().getPassword());
-        userToUpdate.setUserAccount(accountToUpdate);
+        userToUpdate.setFirstName(user.getFirstName());
+        userToUpdate.setUsername(user.getUsername());
+        userToUpdate.setPassword(user.getPassword());
         Person updatedUser = repo.save(userToUpdate);
         return updatedUser;
     }
@@ -59,5 +48,10 @@ public class UserServiceImpl implements UserService {
     @Override
     public List getAllUsers() {
         return this.repo.findAll();
+    }
+
+    @Override
+    public void deleteAll() {
+        repo.deleteAll();
     }
 }
